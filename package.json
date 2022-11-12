@@ -1,0 +1,29 @@
+{
+  "name": "Project Starter",
+  "version": "1.0.0",
+  "description": "Project Starter",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Ahmed Abdelfatah",
+    "Linkedin": "https://www.linkedin.com/in/ahmed-m-abdelfatah"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-zip": "^5.1.0",
+    "sass": "^1.56.1"
+  }
+}
