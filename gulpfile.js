@@ -7,10 +7,9 @@ const gulp = require('gulp'),
       connect = require('gulp-connect'),
       pug = require('gulp-pug'),
       imagemin = require('gulp-imagemin'),
-      terser = require('gulp-terser'),
       plumber = require('gulp-plumber'),
       zip = require('gulp-zip'),
-      fs = require('fs');
+      uglify = require('gulp-uglify');
 
 const paths = {
   src: './src',
@@ -19,7 +18,8 @@ const paths = {
 };
 
 const sources = {
-  html: [`${paths.src}/**/!(_)*.pug`, `${paths.src}/**/!(_)*.html`],
+  html: [`${paths.src}/**/*.pug`, `${paths.src}/**/*.html`],
+  fonts: [`${paths.src}/assets/fonts/*.*`, `${paths.src}/assets/webfonts/*.*`],
   img: [`${paths.src}/assets/img/**/!(_)*.+(png|jpg|jpeg|gif|svg|ico)`],
   css: [`${paths.src}/assets/styles/**/!(_)*.+(css|scss)`],
   js: [`${paths.src}/assets/js/**/!(_)*.js`],
@@ -29,6 +29,7 @@ const sources = {
 const tasks = {
   connect: 'connect',
   html: 'html',
+  fonts: 'fonts',
   img: 'img',
   css: 'css',
   js: 'js',
@@ -59,6 +60,19 @@ gulp.task(tasks.html, (_, dest = paths.build) => {
     .pipe(connect.reload());
 });
 
+// handel fonts
+gulp.task(tasks.fonts, (done, dest = [`${paths.build}/assets/fonts`, `${paths.build}/assets/webfonts`]) => {
+  for (let i = 0; i < dest.length; i++) {
+    // prettier-ignore
+    gulp
+      .src(sources.fonts[i])
+      .pipe(gulp.dest(dest[i]))
+      .pipe(connect.reload());
+  }
+
+  done();
+});
+
 // handel images
 gulp.task(tasks.img, (_, dest = `${paths.build}/assets/img`) => {
   return gulp.src(sources.img).pipe(plumber()).pipe(imagemin()).pipe(gulp.dest(dest)).pipe(connect.reload());
@@ -85,7 +99,7 @@ gulp.task(tasks.js, (_, dest = `${paths.build}/assets/js`) => {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(concat('all.min.js'))
-    .pipe(terser())
+    .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(dest))
     .pipe(connect.reload());
@@ -93,7 +107,6 @@ gulp.task(tasks.js, (_, dest = `${paths.build}/assets/js`) => {
 
 // make compressed version to the client
 gulp.task(tasks.dist, (_, dest = paths.dist) => {
-  // copy all in build to dist zipped
   return gulp.src(sources.dist).pipe(zip('website.zip')).pipe(gulp.dest(dest));
 });
 
@@ -104,10 +117,11 @@ gulp.task(tasks.watch, done => {
   gulp.watch(sources.img, gulp.series(tasks.img));
   gulp.watch(sources.js, gulp.series(tasks.js));
   gulp.watch(sources.dist, gulp.series(tasks.dist));
+  gulp.watch(sources.fonts, gulp.series(tasks.fonts));
 
   done();
 });
 
 // starting
-gulp.task(tasks.start, gulp.series(tasks.html, tasks.img, tasks.css, tasks.css));
+gulp.task(tasks.start, gulp.series(tasks.html, tasks.fonts, tasks.img, tasks.css, tasks.css));
 gulp.task(tasks.default, gulp.parallel('connect', 'watch', 'start'));
