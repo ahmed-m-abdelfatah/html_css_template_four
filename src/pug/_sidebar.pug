@@ -1,19 +1,7 @@
-//- string interpolation
-//- 	escaped = #{val}
-//- 	unescaped = !{val}
-//- 	\#{val} or #{'#{val}'}
-
-//- tag interpolation
-//- 	#[p this is paragraph]
-
-//- - var list = ['html' ,'css']
-//- 		each val,index in list
-//- 			li= val
-
-.sidebar
+div(class="sidebar bg-white p-20 p-relative")
 	h3 Elzero world
 	ul
 		li
-			a(href="index.html")
+			a(href="index.html" class="active")
 				i(class="fa-regular fa-chart-bar fa-fw")
 				span Dashboard

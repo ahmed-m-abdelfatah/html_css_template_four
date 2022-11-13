@@ -11,8 +11,16 @@
   }
 }
 
-a {
-  text-decoration: none;
+html {
+  font-size: 16px;
+
+  @include mdMax {
+    font-size: 14px;
+  }
+
+  @include smMax {
+    font-size: 12px;
+  }
 }
 
 body {
@@ -22,5 +30,9 @@ body {
   .page {
     min-height: 100vh;
     background-color: $bg;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
