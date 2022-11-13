@@ -21,8 +21,8 @@ const sources = {
   html: [`${paths.src}/**/_*.+(pug|html)`, `${paths.src}/**/!(_)*.+(pug|html)`],
   fonts: [`${paths.src}/assets/fonts/*.*`, `${paths.src}/assets/webfonts/*.*`],
   img: [`${paths.src}/assets/img/**/!(_)*.+(png|jpg|jpeg|gif|svg|ico)`],
-  css: [`${paths.src}/assets/styles/**/!(_)*.+(css|scss)`],
-  js: [`${paths.src}/assets/js/**/!(_)*.js`],
+  css: [`${paths.src}/assets/styles/**/*.+(css|scss)`],
+  js: [`${paths.src}/assets/js/**/*.js`],
   dist: [`${paths.build}/**/*.*`, './README.md'],
 };
 
