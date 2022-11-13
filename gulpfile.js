@@ -18,7 +18,7 @@ const paths = {
 };
 
 const sources = {
-  html: [`${paths.src}/**/*.pug`, `${paths.src}/**/*.html`],
+  html: [`${paths.src}/**/_*.+(pug|html)`, `${paths.src}/**/!(_)*.+(pug|html)`],
   fonts: [`${paths.src}/assets/fonts/*.*`, `${paths.src}/assets/webfonts/*.*`],
   img: [`${paths.src}/assets/img/**/!(_)*.+(png|jpg|jpeg|gif|svg|ico)`],
   css: [`${paths.src}/assets/styles/**/!(_)*.+(css|scss)`],
@@ -52,8 +52,14 @@ gulp.task(tasks.connect, (done, root = paths.build) => {
 
 // handel html
 gulp.task(tasks.html, (_, dest = paths.build) => {
+  /**
+   * this for watching only: _*.+(pug|html)
+   * this for watching & compiling only: !(_)*.+(pug|html)
+   * console.log(sources.html.filter(item => !item.includes('_*')));
+   */
+
   return gulp
-    .src(sources.html)
+    .src(sources.html.filter(item => !item.includes('_*')))
     .pipe(plumber())
     .pipe(pug({ pretty: false }))
     .pipe(gulp.dest(dest))

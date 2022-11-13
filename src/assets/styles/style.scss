@@ -1,13 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@use './variables' as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 @import './framework';
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+
+  .page {
+    min-height: 100vh;
+    background-color: $bg;
+  }
 }
