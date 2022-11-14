@@ -1,10 +1,17 @@
-$main-transition: 0.3s ease-in-out;
-$max-z-index: 99999;
-$left: left;
-$right: right;
+// variables
+$left: 'left';
+
+// transition
+$transition: (
+  time: 0.3s,
+);
 
 // colors
-$bg: #f1f5f9;
+$colors: (
+  bg: #f1f5f9,
+  shadow: 0 0 10px #ddd,
+  active: #f6f6f6,
+);
 
 // screens
 $breakpoints: (

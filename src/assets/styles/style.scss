@@ -28,7 +28,7 @@ body {
 
   .page {
     min-height: 100vh;
-    background-color: $bg;
+    background-color: map-get($map: $colors, $key: bg);
   }
 
   a {
@@ -40,3 +40,5 @@ body {
     padding: 0;
   }
 }
+
+@import './sections/_sidebar.scss';
