@@ -51,3 +51,10 @@
 .rad-6 {
   border-radius: 6px;
 }
+
+// media
+@include smMax {
+  .hide-mobile {
+    display: none;
+  }
+}
