@@ -1,0 +1,63 @@
+.content {
+  overflow: hidden;
+
+  .head {
+    .search {
+      &::before {
+        // add search icon
+        font-family: var(--fa-style-family-classic);
+        content: '\f002';
+        font-weight: 900;
+        position: absolute;
+        #{$left}: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 14px;
+        color: map-get($map: $colors, $key: grey);
+      }
+
+      input {
+        border: map-get($map: $border, $key: border);
+        border-radius: map-get($map: $border, $key: rad-10);
+        margin-#{$left}: 5px;
+        padding-#{$left}: 30px;
+        width: 160px;
+        transition: width map-get($map: $transition, $key: time);
+
+        &:focus {
+          @include smMin {
+            width: 200px;
+          }
+
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .icons {
+      .notification {
+        &::before {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background: map-get($map: $colors, $key: red);
+          border-radius: 50%;
+          #{$right}: -5px;
+          top: -5px;
+        }
+
+        i {
+        }
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+        margin-#{$left}: 15px;
+      }
+    }
+  }
+}

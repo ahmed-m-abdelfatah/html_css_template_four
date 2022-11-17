@@ -1,5 +1,12 @@
 // variables
 $left: 'left';
+$right: 'right';
+
+// border
+$border: (
+  border: 1px solid #ccc,
+  rad-10: 10px,
+);
 
 // transition
 $transition: (
@@ -11,6 +18,12 @@ $colors: (
   bg: #f1f5f9,
   shadow: 0 0 10px #ddd,
   active: #f6f6f6,
+  blue: #0075ff,
+  blue-alt: #0d69d5,
+  orange: #f59e0b,
+  green: #22c55e,
+  red: #f44336,
+  grey: #888,
 );
 
 // screens

@@ -12,6 +12,10 @@
   padding: 10px;
 }
 
+.p-15 {
+  padding: 15px;
+}
+
 .p-20 {
   padding: 20px;
 }
@@ -57,4 +61,16 @@
   .hide-mobile {
     display: none;
   }
+}
+
+// Start Width + Height
+.w-full {
+  width: 100%;
+}
+
+// components
+.between-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
