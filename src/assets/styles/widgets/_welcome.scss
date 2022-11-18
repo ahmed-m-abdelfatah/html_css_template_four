@@ -1,0 +1,52 @@
+.welcome {
+  overflow: hidden;
+
+  .intro {
+    @include smMax {
+      padding-bottom: 30px;
+    }
+
+    img {
+      width: 200px;
+      margin-bottom: -10px;
+    }
+  }
+
+  .avatar {
+    $dim: 46px;
+    width: $dim;
+    height: $dim;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: 0 0 5px #ddd;
+    margin-#{$left}: 20px;
+    margin-top: calc(-1 * $dim / 2);
+
+    @include smMax {
+      margin-#{$left}: 0;
+    }
+  }
+
+  .body {
+    border-top: 1px solid map-get($map: $colors, $key: eee);
+    border-bottom: 1px solid map-get($map: $colors, $key: eee);
+
+    > div {
+      flex: 1;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .visit {
+    margin: 0 15px 15px auto;
+    transition: map-get($map: $transition, $key: time);
+
+    &:hover {
+      background-color: map-get($map: $colors, $key: blue-alt);
+    }
+  }
+}
