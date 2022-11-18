@@ -1,6 +1,25 @@
 // box
+
+.d-block {
+  display: block;
+
+  &-mobile {
+    @include smMax {
+      display: block;
+    }
+  }
+}
+
 .d-flex {
   display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.gap-20 {
+  gap: 20px;
 }
 
 .align-center {
@@ -45,6 +64,12 @@
 // font
 .text-c {
   text-align: center;
+
+  &-mobile {
+    @include smMax {
+      text-align: center;
+    }
+  }
 }
 
 .fs-14 {
@@ -54,6 +79,10 @@
 // border
 .rad-6 {
   border-radius: 6px;
+}
+
+.rad-10 {
+  border-radius: 10px;
 }
 
 // media
