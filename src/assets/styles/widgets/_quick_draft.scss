@@ -1,0 +1,16 @@
+.quick-draft {
+  textarea {
+    resize: none;
+    min-height: 180px;
+  }
+
+  .save {
+    margin-left: auto;
+    transition: map-get($map: $transition, $key: time);
+    cursor: pointer;
+
+    &:hover {
+      background-color: map-get($map: $colors, $key: blue-alt);
+    }
+  }
+}

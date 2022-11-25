@@ -58,6 +58,10 @@ $states: grid, flex, block, none;
   margin-top: 20px;
 }
 
+.mb-10 {
+  margin-bottom: 10px;
+}
+
 .mb-20 {
   margin-bottom: 20px;
 }
@@ -111,6 +115,10 @@ $states: grid, flex, block, none;
   font-size: 14px;
 }
 
+.fs-15 {
+  font-size: 15px;
+}
+
 // border
 .rad-6 {
   border-radius: 6px;
@@ -118,6 +126,10 @@ $states: grid, flex, block, none;
 
 .rad-10 {
   border-radius: 10px;
+}
+
+.b-none {
+  border: none;
 }
 
 // media
@@ -144,4 +156,6 @@ $states: grid, flex, block, none;
 }
 
 .btn-shape {
+  padding: 4px 10px;
+  border-radius: 6px;
 }
