@@ -7,11 +7,35 @@
     }
 
     .details {
+      flex: 1;
+
       .progress {
+        height: 4px;
+
         > span {
+          position: absolute;
+          #{$left}: 0;
+          top: 0;
+          height: 100%;
+
           span {
+            position: absolute;
+            bottom: 16px;
+            #{$right}: -16px;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 6px;
+            font-size: 13px;
+
             &::after {
               content: '';
+              border-color: transparent;
+              border-width: 5px;
+              border-style: solid;
+              position: absolute;
+              bottom: -10px;
+              left: 50%;
+              transform: translateX(-50%);
             }
           }
         }
@@ -21,12 +45,12 @@
 }
 
 // colors
-$bgColors: blue;
+$bgColors: blue, orange, green;
 
 @each $bgColor in $bgColors {
-  .#{$bgColor} {
+  #{'.' + $bgColor} {
     // prettier-ignore
-    $background-color: rgba($color: map-get($map: $colors, $key: #{$bgColor} ), $alpha: 0.2);
+    $background-color: rgba($color: map-get($map: $colors, $key: $bgColor ), $alpha: 0.2);
 
     .icon {
       background-color: $background-color;
@@ -34,6 +58,14 @@ $bgColors: blue;
 
     .progress {
       background-color: $background-color;
+
+      > #{'.' + $bgColor} {
+        span {
+          &::after {
+            border-top-color: map-get($map: $colors, $key: $bgColor) !important;
+          }
+        }
+      }
     }
   }
 }

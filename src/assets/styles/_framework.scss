@@ -53,32 +53,18 @@ $nums: 0, 5, 10, 15, 20;
 }
 
 // colors
-.bg-white {
-  background: white;
+$all: white, black, eee, blue, grey, orange, green;
+
+@each $one in $all {
+  #{'.bg-' + $one} {
+    background-color: map-get($map: $colors, $key: $one);
+  }
 }
 
-.bg-eee {
-  background: map-get($map: $colors, $key: eee);
-}
-
-.bg-blue {
-  background: map-get($map: $colors, $key: blue);
-}
-
-.c-white {
-  color: white;
-}
-
-.c-black {
-  color: black;
-}
-
-.c-grey {
-  color: map-get($map: $colors, $key: grey);
-}
-
-.c-blue {
-  color: map-get($map: $colors, $key: blue);
+@each $one in $all {
+  #{'.c-' + $one} {
+    color: map-get($map: $colors, $key: $one);
+  }
 }
 
 // position
