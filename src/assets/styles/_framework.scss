@@ -26,48 +26,30 @@ $states: grid, flex, block, none;
 }
 
 // padding + margin
-.p-10 {
-  padding: 10px;
+$nums: 0, 5, 10, 15, 20;
+
+@each $num in $nums {
+  .p-#{$num} {
+    padding: $num + #{'px'};
+  }
 }
 
-.p-15 {
-  padding: 15px;
+@each $num in $nums {
+  .m-#{$num} {
+    margin: $num + #{'px'};
+  }
 }
 
-.p-20 {
-  padding: 20px;
+@each $num in $nums {
+  .mt-#{$num} {
+    margin-top: $num + #{'px'};
+  }
 }
 
-.m-20 {
-  margin: 20px;
-}
-
-.mt-0 {
-  margin-top: 0;
-}
-
-.mt-5 {
-  margin-top: 5px;
-}
-
-.mt-10 {
-  margin-top: 10px;
-}
-
-.mt-20 {
-  margin-top: 20px;
-}
-
-.mb-10 {
-  margin-bottom: 10px;
-}
-
-.mb-20 {
-  margin-bottom: 20px;
-}
-
-.m-0 {
-  margin: 0;
+@each $num in $nums {
+  .mb-#{$num} {
+    margin-bottom: $num + #{'px'};
+  }
 }
 
 // colors
@@ -93,6 +75,10 @@ $states: grid, flex, block, none;
 
 .c-grey {
   color: map-get($map: $colors, $key: grey);
+}
+
+.c-blue {
+  color: map-get($map: $colors, $key: blue);
 }
 
 // position
@@ -149,6 +135,12 @@ $states: grid, flex, block, none;
 }
 
 // components
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .between-flex {
   display: flex;
   align-items: center;
