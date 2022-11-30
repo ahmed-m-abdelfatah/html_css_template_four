@@ -25,6 +25,10 @@ $states: grid, flex, block, none;
   justify-content: space-between;
 }
 
+.f-wrap {
+  flex-wrap: wrap;
+}
+
 // padding + margin
 $nums: 0, 5, 10, 15, 20;
 
@@ -53,7 +57,7 @@ $nums: 0, 5, 10, 15, 20;
 }
 
 // colors
-$all: white, black, eee, blue, grey, orange, green;
+$all: white, black, eee, blue, grey, orange, green, red;
 
 @each $one in $all {
   #{'.bg-' + $one} {
@@ -83,21 +87,26 @@ $all: white, black, eee, blue, grey, orange, green;
   }
 }
 
-.fs-14 {
-  font-size: 14px;
+$fontSizes: 13, 14, 15, 25;
+
+@each $fz in $fontSizes {
+  #{'.fs-' + $fz} {
+    font-size: #{$fz + 'px'};
+  }
 }
 
-.fs-15 {
-  font-size: 15px;
+.fw-bold {
+  font-weight: bold;
 }
 
 // border
-.rad-6 {
-  border-radius: 6px;
-}
 
-.rad-10 {
-  border-radius: 10px;
+$rads: 6, 10;
+
+@each $rad in $rads {
+  #{'.rad-' + $rad} {
+    border-radius: #{$rad + 'px'};
+  }
 }
 
 .b-none {

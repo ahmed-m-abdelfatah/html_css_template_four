@@ -25,5 +25,10 @@
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.1.0",
     "sass": "^1.56.1"
-  }
+  },
+  "browserslist": [
+    "last 4 versions",
+    "> 2%",
+    "IE 10"
+  ]
 }

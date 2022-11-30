@@ -1,0 +1,10 @@
+.tickets {
+  .box {
+    border: 1px solid map-get($map: $colors, $key: ccc);
+    width: calc(50% - 10px); // gap-20
+
+    @include smMax {
+      width: 100%;
+    }
+  }
+}
