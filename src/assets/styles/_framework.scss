@@ -87,7 +87,7 @@ $all: white, black, eee, blue, grey, orange, green, red;
   }
 }
 
-$fontSizes: 13, 14, 15, 25;
+$fontSizes: 12, 13, 14, 15, 25;
 
 @each $fz in $fontSizes {
   #{'.fs-' + $fz} {
