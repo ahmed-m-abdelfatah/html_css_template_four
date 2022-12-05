@@ -1,0 +1,30 @@
+.tasks {
+  .task-row {
+    &:not(:last-of-type) {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border: 1px solid map-get($map: $colors, $key: eee);
+    }
+
+    &.done {
+      opacity: 0.3;
+
+      :is(h3, p) {
+        text-decoration: line-through;
+      }
+    }
+
+    .info {
+      flex-grow: 1;
+    }
+
+    .delete {
+      cursor: pointer;
+      transition: map-get($map: $transition, $key: time);
+
+      &:hover {
+        color: map-get($map: $colors, $key: red);
+      }
+    }
+  }
+}
