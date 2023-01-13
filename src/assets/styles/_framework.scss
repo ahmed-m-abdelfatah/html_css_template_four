@@ -39,6 +39,30 @@ $nums: 0, 5, 10, 15, 20;
 }
 
 @each $num in $nums {
+  .pt-#{$num} {
+    padding-top: $num + #{'px'};
+  }
+}
+
+@each $num in $nums {
+  .ps-#{$num} {
+    padding-right: $num + #{'px'};
+  }
+}
+
+@each $num in $nums {
+  .pb-#{$num} {
+    padding-bottom: $num + #{'px'};
+  }
+}
+
+@each $num in $nums {
+  .pe-#{$num} {
+    padding-left: $num + #{'px'};
+  }
+}
+
+@each $num in $nums {
   .m-#{$num} {
     margin: $num + #{'px'};
   }
@@ -51,8 +75,20 @@ $nums: 0, 5, 10, 15, 20;
 }
 
 @each $num in $nums {
+  .ms-#{$num} {
+    margin-right: $num + #{'px'};
+  }
+}
+
+@each $num in $nums {
   .mb-#{$num} {
     margin-bottom: $num + #{'px'};
+  }
+}
+
+@each $num in $nums {
+  .me-#{$num} {
+    margin-left: $num + #{'px'};
   }
 }
 
