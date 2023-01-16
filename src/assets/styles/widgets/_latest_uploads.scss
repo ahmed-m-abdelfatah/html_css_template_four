@@ -1,0 +1,14 @@
+.latest-uploads {
+  ul {
+    li {
+      &:not(:last-of-type) {
+        border-bottom: map-get($map: $border, $key: border);
+      }
+
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
+}
